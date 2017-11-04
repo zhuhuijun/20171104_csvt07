@@ -10,8 +10,6 @@ class UserForm(forms.Form):
 	name = forms.CharField()
 	headImg = forms.FileField()
 
-	def __unicode__(self):
-		return self.name
 
 def show_author(req):
 	authors = Author.objects.all()
@@ -32,6 +30,7 @@ def register(req):
 			print form.cleaned_data['headImg'].size
 			paths = '/uploadfile/'+form.cleaned_data['headImg'].name
 			paths1 = paths.encode('utf-8')
+			print paths1
 			fp = file(paths1,'wb')
 
 			s = form.cleaned_data['headImg'].read()
