@@ -21,7 +21,7 @@ def register(req):
 	if req.method == 'POST':
 		form = UserForm(req.POST)
 		if form.is_valid():
-			print form.cleand_data
+			print form.cleaned_data
 			return HttpResponse('ok')
 	else:
 		form = UserForm()
