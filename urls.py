@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     #url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/show_author/$','blog.views.show_author'),
     url(r'^blog/show_book/$','blog.views.show_book'),
+    url(r'^blog/register/$','blog.views.register'),
 
 )
