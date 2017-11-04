@@ -23,7 +23,7 @@ def register(req):
 		form = UserForm(req.POST,req.FILES)
 		if form.is_valid():
 			print form.cleaned_data
-			print form.FILES
+			print req.FILES
 			return HttpResponse('ok')
 	else:
 		form = UserForm()
