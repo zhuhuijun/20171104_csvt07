@@ -1,6 +1,8 @@
 # Create your views here.
 # coding:utf-8 	
-from blog.models import Author,Book
+from blog.models import Author
+from blog.models import Book
+
 from django.shortcuts import render_to_response
 
 
