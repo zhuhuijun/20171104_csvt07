@@ -8,7 +8,10 @@ from django.shortcuts import render_to_response
 
 class UserForm(forms.Form):
 	name = forms.CharField()
-	headImg = forms.FileField(upload_to = './uploadfile/')
+	headImg = forms.FileField()
+
+	def __unicode__(self):
+		return self.name
 
 def show_author(req):
 	authors = Author.objects.all()
@@ -27,7 +30,10 @@ def register(req):
 			print form.cleaned_data['headImg']
 			print form.cleaned_data['headImg'].name
 			print form.cleaned_data['headImg'].size
-			fp = file('/uploadfile/'+form.cleaned_data['headImg'].name,'wb')
+			paths = '/uploadfile/'+form.cleaned_data['headImg'].name
+			paths1 = paths.encode('utf-8')
+			fp = file(paths1,'wb')
+
 			s = form.cleaned_data['headImg'].read()
 			fp.write(s)
 			fp.close()
