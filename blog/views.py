@@ -24,6 +24,7 @@ def register(req):
 		if form.is_valid():
 			print form.cleaned_data
 			print req.FILES
+			print form.cleaned_data['headImg']
 			return HttpResponse('ok')
 	else:
 		form = UserForm()
