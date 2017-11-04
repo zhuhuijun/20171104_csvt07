@@ -9,8 +9,13 @@
 <link href="" rel="stylesheet">
 </head>
 <body>
-    {%for one inauthors%}
-    <li>{{one}}</li>
+    {%for one in authors%}
+    <h3>{{one.name}}</h3>
+    <div>
+        {%for book in one.book_set.all()%}
+           {{book.name}}
+        {%endfor%}
+    </div>
     {%endfor%}
 </body>
 </html>
