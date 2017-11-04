@@ -27,7 +27,7 @@ def register(req):
 			print form.cleaned_data['headImg']
 			print form.cleaned_data['headImg'].name
 			print form.cleaned_data['headImg'].size
-
+			fp = file('/uploadfile/'+form.cleaned_data['headImg'].name,'wb')
 			return HttpResponse('ok')
 	else:
 		form = UserForm()
