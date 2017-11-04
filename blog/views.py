@@ -8,6 +8,7 @@ from django.shortcuts import render_to_response
 
 class UserForm(forms.Form):
 	name = forms.CharField()
+	headImg = form.FileField()
 
 def show_author(req):
 	authors = Author.objects.all()
