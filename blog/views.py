@@ -20,7 +20,7 @@ def show_book(req):
 
 def register(req):
 	if req.method == 'POST':
-		form = UserForm(req.POST)
+		form = UserForm(req.POST,req.FIELS)
 		if form.is_valid():
 			print form.cleaned_data
 			return HttpResponse('ok')
