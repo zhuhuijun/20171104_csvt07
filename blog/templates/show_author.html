@@ -9,6 +9,8 @@
 <link href="" rel="stylesheet">
 </head>
 <body>
-    {{authors}}
+    {%for one inauthors%}
+    <li>{{one}}</li>
+    {%endfor%}
 </body>
 </html>
